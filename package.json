@@ -1,0 +1,16 @@
+{
+  "name": "littleleaders",
+  "version": "1.0.0",
+  "description": "A website for LittleLeadersKwt",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SanaY",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "git": "^0.1.5",
+    "nodemon": "^2.0.15"
+  }
+}

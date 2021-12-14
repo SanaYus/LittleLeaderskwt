@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Leaders | About Us</title>
+  <link href="aboutLL.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/1.1.9/smooth_scrollbar.css">
+</head>
+<body>
+  <main id="top">
+  <div class="header">
+    <img src="/images/up.png" alt="">
+  </div>
+  <nav> <!--background img in css-->
+    <div class="logo">
+      <a href="/homepageLL.html"><img src="/images/LL Logo.png"> </a>
+    </div> 
+    <div class="nav-links">
+      <li><a href="/aboutLL.html">About</a></li>
+      <li><a href="/coursesLL.html">Courses</a></li>
+      <li><a href="/galleryLL.html">Gallery</a></li>
+      <li><a href="/blogLL.html">Blog</a></li>
+    </div>
+  </nav>
+   
+  <img src="images/Mask Group 1.png" class="smoke-blue">
+   
+    <div class="landing-img">
+      <img src="/images/LandingImage.png"> 
+    </div>
+
+    <div class="landing-writeup">
+      <h1>ABOUT US</h1>
+      <p>We believe empathy, intuitive design and passion for growth push us all forward.</p>
+      <button class="cta-btn"><a href="#learnMore">learn more</a></button>
+    </div>
+
+    <div class="qualities">
+      <div class="static-text">We believe in</div>
+      <div class="dynamic-text">
+        <li><span>Simplicity</span></li>
+        <li><span>Authenticity</span></li>
+        <li><span>Passion</span></li>
+      </div>
+    </div>
+
+    <div id="learnMore"></div>
+    <div class="our-story">
+      <div class="heading">Our story</div>
+      <p class="para">Little leaders began its journey in 2014, and we've been on an epic ride ever since. From our beginnings with conducting tiny workshops for public speaking, to building a plathora of courses for our avid little leaders, we have always tried to stay true to our mission of uplifting youth.</p>
+    </div>
+
+
+
+    <div class="footer">
+      <div class="footerImages">
+      <div class="footerLogo">
+        <div class="footernav"><a href="homepageLL.html">home</a> | <a href="#top">about</a>| <a href="#">courses</a> | <a href="#">gallery</a> | <a href="#">blog</a> </div>
+        <img src="/images/LL Logo.png" alt="Little Leaders Logo">
+      </div>
+      <div class="contactUs">
+        <p>contact us</p>
+        <img src="/images/location.png" alt="location"> 
+        <img src="/images/phone1.png" style = "height: 34px;"alt="Phone"> 
+        <img src="/images/mail1.png" style = "height: 30px;"alt="Email"> 
+      </div>
+      <div class="contactUs2">
+        <span> Salmiya, Kuwait</span>
+        <span>+965 99806247</span>
+        <span>littleleaderskwt@gmail.com</span>
+      </div>
+      <div class="footerlinks">
+        <p>follow us</p>
+       <a href="#"></a> <img src="/images/instagramicon.png" alt="insta icon"> </a>
+       <a href="#"></a> <img src="/images/facebook.png" alt="facebook icon">  </a> 
+       <a href="#"></a> <img src="/images/pinterest.png" alt="pinterest icon"> </a>
+      </div>
+    </div>
+    </div>
+
+  </main>
+
+  <script>
+    const landingImg = document.querySelector(".landing-img img");
+    const smokeBlue = document.querySelector(".smoke-blue");
+   
+
+    window.addEventListener("scroll", function(){
+      let scrollPosition = window.pageYOffset;
+      landingImg.style.transform = "translateY(" + scrollPosition*.3 + "px)";
+    });
+
+    // /********QUALITIES OBSERVER*****/
+    // const qualities = document.querySelectorAll(".qualities p");
+
+    // let qualitiesOptions = {
+    //   threshold: 1,
+    //   rootMargin: '0px 0px 300px 0px'
+    // }
+
+    // let qualitiesSlide = (entries => {
+    //   entries.forEach(entry => {
+    //     if(entry.isIntersecting){
+    //       entry.target.classList.add("slideup");
+    //     } 
+    //   });
+    // });
+
+    // let qualitiesAppear = new IntersectionObserver(qualitiesSlide, qualitiesOptions);
+
+    // qualities.forEach((item)=>
+    // {
+    //   qualitiesAppear.observe(item);
+    // })
+
+      /******HEADINGS OBSERVER INTERSECTION*******/
+    let headings = document.querySelectorAll(".heading");
+
+    let headingOptions = {
+      threshold: 0.6,
+      rootMargin: '0px 0px -70px 0px'
+    };
+    
+    let headingAppear = new IntersectionObserver(function(entries, headingAppear){
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("appear");
+        } else {
+          entry.target.classList.remove("appear");
+        }
+      })
+    }, headingOptions);
+      
+  headings.forEach(heading => {
+    headingAppear.observe(heading);
+  })    
+   
+
+  </script>
+  </body>
+  </html>
